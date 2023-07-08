@@ -7,6 +7,8 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: ['airbnb-typescript'],
   rules: {
-    // Add any custom rules or overrides here
+    'react/jsx-filename-extension':0,
+    'import/extensions': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };
