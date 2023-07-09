@@ -14,14 +14,20 @@ export const styles  = StyleSheet.create<LoginTemplateStyles>({
     backgroundColor: '#fff',
   },
   inputContainer: {
-    paddingTop: 20,
+    paddingTop: 25,
   },
   buttonContainer: {
-    marginTop: 20,
+    marginTop: 25,
   },
   registerContainer: {
     marginTop: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  errors: {
+    color: 'red',
+    position: 'absolute',
+    bottom: -20,
+    alignSelf: 'center',
   },
 });

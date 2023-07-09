@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import { Text, View, TouchableOpacity, Image, Button } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import { LoginTemplateProps } from './types';
 import { styles } from './styles';
 import { Input } from '../../Atoms/TextInput';
 import { AppButton } from '../../Atoms/Button';
+import { Controller } from 'react-hook-form';
 
-export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress }) => {
-
+export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress, control, handleSubmit, onSubmit, errors }) => {
   return (
     <View>
       <Image
@@ -14,17 +14,57 @@ export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress }) =>
         source={require('../../../assets/images/logo2.png')}></Image>
       <View>
          <View style={styles.inputWrapper}>
-          <Input
-            placeholder="Email"
-            onChange={()=>{}}/>
+           <Controller
+             control={control}
+             render={({ field: { onChange, onBlur, value } }) => (
+               <View>
+                 <Input
+                   placeholder="Email"
+                   onChange={(v) => onChange(v)}
+                   onBlur={onBlur}
+                   value={value}
+                 />
+                 {errors?.email && (
+                   <Text style={styles.errors}>{errors.email.message}</Text>
+                 )}
+               </View>
+
+             )}
+             name='email'
+             rules={{
+               required: true,
+               pattern: {
+                 value: /^\S+@\S+$/i,
+                 message: 'Invalid email format',
+               },
+             }}
+           />
           <View style={styles.inputContainer}>
-             <Input
-            placeholder="Password"
-            onChange={()=>{}}
-            />
+            <Controller
+              control={control}
+              render={({ field: { onChange, onBlur, value } }) => (
+                <Input
+                  placeholder="Password"
+                  onChange={(v) => onChange(v)}
+                  onBlur={onBlur}
+                  value={value}
+                />
+              )}
+              name="password"
+              rules={{
+                required: true,
+                pattern: {
+                  value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/,
+                  message: 'Invalid password format',
+                },
+              }}/>
+            {errors?.password && (
+              <Text style={styles.errors}>{errors.password.message}</Text>
+            )}
           </View>
            <View style={styles.buttonContainer}>
-             <AppButton  title='Login' />
+             <AppButton
+               title='Login'  onPress={handleSubmit(onSubmit)}/>
            </View>
          </View>
       </View>

@@ -4,6 +4,7 @@ import { InputStyles } from './types';
 export const styles  = StyleSheet.create<InputStyles>({
   input: {
     height: 48,
+    width: '100%',
     borderColor: 'lightgray',
     borderWidth: 1,
     paddingHorizontal: 10,

@@ -1,7 +1,8 @@
-import { TextStyle, ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from 'react-native';
 
 export interface ButtonProps {
-  title: string;
+  title: string,
+  onPress: ()=>{},
 }
 
 export interface ButtonStyles {

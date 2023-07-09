@@ -13,5 +13,6 @@ export const RootNavigation = () => {
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
         <Stack.Screen name={'RegistrationScreen'} component={RegistrationScreen} />
       </Stack.Navigator>
-    </NavigationContainer>);
+    </NavigationContainer>
+  );
 };

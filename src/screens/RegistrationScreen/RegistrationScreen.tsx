@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { RegistrationTemplate } from '../../presentationals/Template/RegistrationTemplate/RegistrationTemplate';
 
 export const RegistrationScreen = () => {
   return (
-    <View><Text>РЕГІСТРАТІОН</Text></View>
+    <RegistrationTemplate />
   );
 };
