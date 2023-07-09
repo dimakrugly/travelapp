@@ -7,7 +7,7 @@ export const styles  = StyleSheet.create<InputStyles>({
     borderColor: 'lightgray',
     borderWidth: 1,
     paddingHorizontal: 10,
-    borderRadius: 25,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,

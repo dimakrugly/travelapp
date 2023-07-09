@@ -5,7 +5,9 @@ export interface LoginTemplateProps {
 }
 
 export interface LoginTemplateStyles {
-  loginImage: ImageStyle;
-  inputWrapper: ViewStyle;
-  inputContainer: ViewStyle;
+  loginImage: ImageStyle,
+  inputWrapper: ViewStyle,
+  inputContainer: ViewStyle,
+  buttonContainer: ViewStyle,
+  registerContainer: ViewStyle,
 }
