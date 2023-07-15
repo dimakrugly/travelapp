@@ -1,19 +1,19 @@
 import { ImageStyle, ViewStyle } from 'react-native';
+import { Control, FieldErrors } from 'react-hook-form';
+
+type FormValues = {
+  email: string;
+  password: string;
+};
+
+type OnSubmitType = () => void;
 
 export interface LoginTemplateProps {
   onNavigationPress: ()=>void,
-  handleSubmit: (onSubmit: () => {})=>{},
-  errors: {
-    email: {
-      message: string
-    },
-    password: {
-      message: string,
-    }
-  },
-  onSubmit: ()=>{},
-  onPress: ()=>{},
-  control: any,
+  handleSubmit: (onSubmit: OnSubmitType)=>void,
+  errors: FieldErrors<FormValues>,
+  onSubmit: OnSubmitType,
+  control: Control<FormValues>
 }
 
 export interface LoginTemplateStyles {

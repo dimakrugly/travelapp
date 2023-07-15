@@ -6,7 +6,7 @@ import { Input } from '../../Atoms/TextInput';
 import { AppButton } from '../../Atoms/Button';
 import { Controller } from 'react-hook-form';
 
-export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress, control, handleSubmit, onSubmit, errors }) => {
+export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress, control, onSubmit, errors }) => {
   return (
     <View>
       <Image
@@ -64,7 +64,7 @@ export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress, cont
           </View>
            <View style={styles.buttonContainer}>
              <AppButton
-               title='Login'  onPress={handleSubmit(onSubmit)}/>
+               title='Login' onPress={onSubmit}/>
            </View>
          </View>
       </View>

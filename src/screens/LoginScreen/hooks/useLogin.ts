@@ -2,40 +2,36 @@ import { useNavigation } from '@react-navigation/native';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormValues } from './types';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { authLogin } from '../../../store/reducers/user/action';
+import { AppDispatch } from '../../../store/store';
 
 export const useLogin = () => {
 
-  const API_URL = process.env.API_URL;
+  const dispatch  = useDispatch<AppDispatch>();
 
   const navigation = useNavigation<any>();
   const onNavigationPress = useCallback(()=>{
     navigation.navigate('RegistrationScreen');
   }, []);
 
-  const { control, handleSubmit, formState: { errors, email, password } } = useForm<FormValues>({
+  const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
     defaultValues: {
       email: '',
       password: '',
     },
   });
 
-
-  const onSubmit = (data) => {
-    const requestData = {
+  const onSubmitFetch = (data: { email: string, password: string }) => {
+    dispatch(authLogin({
       email: data.email,
       password: data.password,
-    };
-
-    axios
-      .post('https://nest-ln8n-oleksiizhukatt.vercel.app/auth/login', requestData)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    }));
   };
+
+  const onSubmit = useCallback(()=>{
+    handleSubmit(onSubmitFetch)();
+  }, []);
 
   return { onNavigationPress, control, handleSubmit, formState: { errors }, onSubmit };
 };
