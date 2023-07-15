@@ -33,5 +33,6 @@ export const useLogin = () => {
     handleSubmit(onSubmitFetch)();
   }, []);
 
-  return { onNavigationPress, control, handleSubmit, formState: { errors }, onSubmit };
+
+  return { onNavigationPress, control, handleSubmit, errors, onSubmit };
 };

@@ -2,9 +2,12 @@ import { StyleSheet } from 'react-native';
 import { LoginTemplateStyles } from './types';
 
 export const styles  = StyleSheet.create<LoginTemplateStyles>({
+  keyBoardContainer: {
+    flex: 1,
+  },
   loginImage: {
     width: 'auto',
-    height: '50%',
+    flex: 1,
     backgroundColor: 'white',
   },
   inputWrapper: {

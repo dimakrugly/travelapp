@@ -3,15 +3,12 @@ import { LoginTemplate } from '../../presentationals';
 import { useLogin } from './hooks';
 
 export const LoginScreen: React.FC = () => {
-  const { onNavigationPress, control, handleSubmit, formState: { errors }, onSubmit } = useLogin();
+  const useLoginProps = useLogin();
 
   return (
     <LoginTemplate
-      onNavigationPress={onNavigationPress}
-      control={control}
-      handleSubmit={handleSubmit}
-      onSubmit={onSubmit}
-      errors={errors}
+      {...useLoginProps}
     />
   );
 };
+

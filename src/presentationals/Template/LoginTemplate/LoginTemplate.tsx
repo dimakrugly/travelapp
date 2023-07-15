@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image, KeyboardAvoidingView } from "react-native";
 import { LoginTemplateProps } from './types';
 import { styles } from './styles';
 import { Input } from '../../Atoms/TextInput';
@@ -8,7 +8,7 @@ import { Controller } from 'react-hook-form';
 
 export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress, control, onSubmit, errors }) => {
   return (
-    <View>
+    <KeyboardAvoidingView style={styles.keyBoardContainer} behavior="padding">
       <Image
         style={styles.loginImage}
         source={require('../../../assets/images/logo2.png')}></Image>
@@ -73,8 +73,9 @@ export const LoginTemplate = memo<LoginTemplateProps>(({ onNavigationPress, cont
           <Text>Don't have an account? Register</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 },
 );
+
 

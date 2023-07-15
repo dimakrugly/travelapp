@@ -17,6 +17,7 @@ export interface LoginTemplateProps {
 }
 
 export interface LoginTemplateStyles {
+  keyBoardContainer: ViewStyle,
   loginImage: ImageStyle,
   inputWrapper: ViewStyle,
   inputContainer: ViewStyle,

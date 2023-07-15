@@ -3,7 +3,10 @@ import { authLogin } from './action';
 
 interface UserTypes {
   user: null | {}
-  tokens: null | {}
+  tokens: null | {
+    accessToken: string;
+    refreshToken: string;
+  }
   isLoading: boolean
   failure: null | any
 }
@@ -28,8 +31,6 @@ const user = createSlice({
       .addCase(authLogin.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
-
-        console.log('cTeuT', state);
       })
       .addCase(authLogin.rejected, (state) => {
         state.isLoading = false;
