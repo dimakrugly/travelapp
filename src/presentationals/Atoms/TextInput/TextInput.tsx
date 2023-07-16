@@ -3,6 +3,7 @@ import React from 'react';
 import { styles } from './styles';
 import { InputProps } from './types';
 
+
 export const Input: React.FC<InputProps> = ({ placeholder, onChange, onBlur, value, password = false }) => {
   return (
     <TextInput
@@ -12,6 +13,6 @@ export const Input: React.FC<InputProps> = ({ placeholder, onChange, onBlur, val
       onBlur={onBlur}
       value={value}
       secureTextEntry={password}
-    ></TextInput>
+      />
   );
 };

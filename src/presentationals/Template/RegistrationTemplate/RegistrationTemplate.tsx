@@ -7,6 +7,7 @@ import { RegisterTemplateProps } from './types';
 export const RegistrationTemplate = memo<RegisterTemplateProps>(({
   onNavigationPress,
 }) => {
+
   return (
       <View style={styles.textArea}>
         <Text>Register</Text>
@@ -16,7 +17,8 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
           <TouchableOpacity onPress={onNavigationPress}>
               <Text>Have an account? Log in</Text>
           </TouchableOpacity>
-      </View>
+        </View>
+
   );
 },
 );

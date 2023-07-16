@@ -6,13 +6,13 @@ import { Input } from '../../Atoms/TextInput';
 import { AppButton } from '../../Atoms/Button';
 import { Controller } from 'react-hook-form';
 
-export const LoginTemplate = memo<LoginTemplateProps>(({ 
+
+export const LoginTemplate = memo<LoginTemplateProps>(({
   onNavigationPress, 
   control, 
   onSubmit, 
   errors,
-  isLoading }) => {
-
+  isLoading }) =>  {
   return (
     <KeyboardAvoidingView style={styles.keyBoardContainer} behavior="padding">
       <Image

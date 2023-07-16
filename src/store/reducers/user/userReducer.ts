@@ -3,7 +3,7 @@ import { authLogin } from './action';
 
 interface UserTypes {
   user: null | {}
-  tokens: {
+  tokens: null | {
     accessToken: string;
     refreshToken: string;
   }
@@ -32,11 +32,12 @@ const user = createSlice({
       .addCase(authLogin.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload;
-        
+
         state.tokens.accessToken = action.payload.accessToken;
         state.tokens.refreshToken = action.payload.refreshToken;
 
         console.log('CTEuT', state);
+
       })
       .addCase(authLogin.rejected, (state) => {
         state.isLoading = false;
