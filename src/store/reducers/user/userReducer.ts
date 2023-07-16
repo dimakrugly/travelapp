@@ -3,7 +3,7 @@ import { authLogin } from './action';
 
 interface UserTypes {
   user: null | {}
-  tokens: null | {
+  tokens: {
     accessToken: string;
     refreshToken: string;
   }

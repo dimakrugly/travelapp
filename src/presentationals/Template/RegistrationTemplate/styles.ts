@@ -13,4 +13,13 @@ export const styles  = StyleSheet.create<RegisterTemplateStyles>({
     backgroundColor: '#fff',
     width: '100%',
   },
+  errors: {
+    color: 'red',
+    position: 'absolute',
+    bottom: -20,
+    alignSelf: 'center',
+  },
+  inputField: {
+    padding: 10,
+  },
 });
