@@ -1,3 +1,35 @@
+## OZDT Travel APP
+
+###
+Introducing OZDT: Capture and Pin Your Moments! With OZDT, users can effortlessly snap photos and save them on a real-world map. Relive your memories with a personalized touch, as each photo becomes a location-based pin on the map. Explore, reminisce, and share your experiences like never before with OZDT.
+
+___
+___
+
+
+#### FrontEnd Repo
+https://github.com/dimakrugly/travelapp
+
+Developed by Dmytro Torop
+https://github.com/dimakrugly
+___
+___
+#### BackEnd Repo
+https://github.com/oleksiizhuk/NEST/
+
+Developed by Oleksii Zhuk
+https://github.com/oleksiizhuk
+___
+___
+### Whats done?
+
+
+Login Screen with React Hook Form validation and POST queries to server
+
+
+![Login Screen](./MD/Log.jpg)
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started

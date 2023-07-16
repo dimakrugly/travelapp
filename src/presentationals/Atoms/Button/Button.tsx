@@ -1,4 +1,4 @@
-import {TouchableOpacity, View, Text, ActivityIndicator} from 'react-native';
+import { TouchableOpacity, View, Text, ActivityIndicator } from 'react-native';
 import React from 'react';
 import { ButtonProps } from './types';
 import { styles } from './styles';

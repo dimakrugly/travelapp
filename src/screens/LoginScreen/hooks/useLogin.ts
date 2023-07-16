@@ -5,7 +5,7 @@ import { FormValues } from './types';
 import { useDispatch, useSelector } from 'react-redux';
 import { authLogin } from '../../../store/reducers/user/action';
 import { AppDispatch } from '../../../store/store';
-import {selectLoader, selectUser} from '../../../store/reducers/user/selector';
+import { selectLoader } from '../../../store/reducers/user/selector';
 
 export const useLogin = () => {
   const dispatch  = useDispatch<AppDispatch>();
@@ -35,7 +35,6 @@ export const useLogin = () => {
 
 
   const isLoading = useSelector(selectLoader);
- console.log('LOADING', isLoading);
 
   return { onNavigationPress, control, handleSubmit, errors, onSubmit, isLoading };
 };
