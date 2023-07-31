@@ -4,10 +4,10 @@ import { ButtonProps } from './types';
 import { styles } from './styles';
 
 
-export const AppButton: React.FC<ButtonProps> = ({ title, onPress, isLoading }) => {
+export const AppButton: React.FC<ButtonProps> = ({ title, onPress, isLoading, disabled }) => {
   return (
     <View style={styles.container} >
-        <TouchableOpacity style={styles.button}  onPress={onPress} >
+        <TouchableOpacity style={styles.button}  onPress={onPress} disabled={disabled} >
             {isLoading ? (
                 <ActivityIndicator size="small" color="#ffffff" />
             ) : (

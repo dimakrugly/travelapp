@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { authLogin } from './action';
+import { authLogin } from './actions/authLogin';
+import { authRegistration } from './actions/authRegistration';
 
 interface UserTypes {
   user: null | {}
@@ -35,11 +36,23 @@ const user = createSlice({
 
         state.tokens.accessToken = action.payload.accessToken;
         state.tokens.refreshToken = action.payload.refreshToken;
-
-        console.log('CTEuT', state);
-
       })
       .addCase(authLogin.rejected, (state) => {
+        state.isLoading = false;
+      })
+        
+      .addCase(authRegistration.pending, (state) => {
+        state.isLoading = true;
+        state.failure = null;
+      })
+      .addCase(authRegistration.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload;
+
+        state.tokens.accessToken = action.payload.accessToken;
+        state.tokens.refreshToken = action.payload.refreshToken;
+      })
+      .addCase(authRegistration.rejected, (state) => {
         state.isLoading = false;
       });
   },

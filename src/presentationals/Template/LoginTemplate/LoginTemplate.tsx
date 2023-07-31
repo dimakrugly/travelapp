@@ -72,7 +72,11 @@ export const LoginTemplate = memo<LoginTemplateProps>(({
           </View>
            <View style={styles.buttonContainer}>
              <AppButton
-               title='Login' onPress={onSubmit} isLoading={isLoading}/>
+                 title='Login'
+                 onPress={onSubmit}
+                 isLoading={isLoading}
+                 disabled={isLoading}
+             />
            </View>
          </View>
       </View>

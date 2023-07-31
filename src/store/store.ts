@@ -1,13 +1,27 @@
-import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import {Action, combineReducers, configureStore, getDefaultMiddleware, ThunkAction } from '@reduxjs/toolkit';
 import userReducer from './reducers/user/userReducer';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { persistStore, persistReducer } from 'redux-persist';
 
 const rootReducer = combineReducers({
   user: userReducer,
 });
 
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
+
+export const persistor = persistStore(store);
 
 
 export type AppDispatch = typeof store.dispatch;

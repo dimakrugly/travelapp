@@ -9,11 +9,11 @@ import { AppButton } from '../../Atoms/Button';
 export const RegistrationTemplate = memo<RegisterTemplateProps>(({
   onNavigationPress,
   control,
-  handleSubmit,
   errors,
   onSubmit,
+  // isLoading,
+  validateAge,
 }) => {
-
   return (
       <View style={styles.textArea}>
         <Text>Register</Text>
@@ -101,6 +101,32 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
                 }}/>
             </View>
             <View style={styles.inputField}>
+                <Controller
+                    control={control}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <View>
+                            <Input
+                                placeholder="Confirm password"
+                                onChange={(v) => onChange(v)}
+                                onBlur={onBlur}
+                                value={value}
+                                password={true}
+                            />
+                            {errors?.password && (
+                                <Text style={styles.errors}>{errors.password.message}</Text>
+                            )}
+                        </View>
+                    )}
+                    name="passwordConfirm"
+                    rules={{
+                      required: true,
+                      pattern: {
+                        value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/,
+                        message: 'Invalid password format',
+                      },
+                    }}/>
+            </View>
+            <View style={styles.inputField}>
             <Controller
                 control={control}
                 render={({ field: { onChange, onBlur, value } }) => (
@@ -127,19 +153,22 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
                   },
                 }}
             />
-            </View>
-           
             <View>
                 <AppButton
-                    title='Registration' onPress={handleSubmit(onSubmit)} isLoading={true}/>
+                    title='Register'
+                    onPress={onSubmit}
+                    isLoading={false}
+                    disabled={false}
+                />
             </View>
         </View>
+
           <TouchableOpacity onPress={onNavigationPress}>
               <Text>Have an account? Log in</Text>
           </TouchableOpacity>
-        </View>
 
+        </View>
+      </View>
   );
 },
 );
-

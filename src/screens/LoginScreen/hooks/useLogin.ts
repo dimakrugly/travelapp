@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
-import { FormValues } from './types';
 import { useDispatch, useSelector } from 'react-redux';
-import { authLogin } from '../../../store/reducers/user/action';
+import { authLogin } from '../../../store/reducers/user/actions/authLogin';
 import { AppDispatch } from '../../../store/store';
 import { selectLoader } from '../../../store/reducers/user/selector';
+import { FormValues } from '../../../presentationals/Template/LoginTemplate/types';
 
 
 
@@ -40,5 +40,5 @@ export const useLogin = () => {
 
   const isLoading = useSelector(selectLoader);
 
-  return { onNavigationPress, control, handleSubmit, errors, onSubmit, isLoading };
+  return { onNavigationPress, control, errors, onSubmit, isLoading };
 };

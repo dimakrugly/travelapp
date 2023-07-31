@@ -2,7 +2,8 @@ import { TextStyle, ViewStyle } from 'react-native';
 export interface ButtonProps {
   title: string,
   onPress: ()=>void,
-  isLoading: boolean,
+  isLoading?: boolean,
+  disabled?: boolean,
 }
 
 export interface ButtonStyles {

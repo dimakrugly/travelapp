@@ -1,9 +1,10 @@
 import { TextStyle, ViewStyle } from 'react-native';
 import { Control, FieldErrors } from 'react-hook-form';
 
-type FormValues = {
+export type RegistrationFormValues = {
   email: string;
   password: string;
+  passwordConfirm: string;
   firstName: string,
   lastName: string,
   age: number,
@@ -15,10 +16,11 @@ type OnSubmitType = () => void;
 export interface RegisterTemplateProps {
   onNavigationPress: ()=>void,
   handleSubmit: (onSubmit: OnSubmitType)=>void,
-  errors: FieldErrors<FormValues>,
-  onSubmit: OnSubmitType,
-  control: Control<FormValues>,
+  errors: FieldErrors<RegistrationFormValues>,
+  onSubmit: any,
+  control: Control<RegistrationFormValues>,
   isLoading: boolean,
+  validateAge: ()=>{},
 }
 
 export interface RegisterTemplateStyles {
