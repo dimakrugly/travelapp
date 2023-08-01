@@ -20,7 +20,6 @@ export interface RegisterTemplateProps {
   onSubmit: any,
   control: Control<RegistrationFormValues>,
   isLoading: boolean,
-  validateAge: ()=>{},
 }
 
 export interface RegisterTemplateStyles {

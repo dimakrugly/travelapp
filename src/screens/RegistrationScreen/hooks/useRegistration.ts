@@ -2,18 +2,21 @@ import { useNavigation } from '@react-navigation/native';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { RegistrationFormValues } from '../../../presentationals/Template/RegistrationTemplate/types';
-import { authLogin } from '../../../store/reducers/user/actions/authLogin';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../store/store';
-import {authRegistration} from "../../../store/reducers/user/actions/authRegistration";
+import { authRegistration } from '../../../store/reducers/user/actions/authRegistration';
+import { selectIsAuth, selectLoader } from '../../../store/reducers/user/selector';
 
 export const useRegistration = () => {
+
+  const isAuth = useSelector(selectIsAuth);
   
   const dispatch  = useDispatch<AppDispatch>();
   
   const navigation = useNavigation<any>();
+
   const onNavigationPress = useCallback(()=>{
-    navigation.navigate('LoginScreen');
+    navigation.navigate('ProfileScreen');
   }, []);
 
   const { control, handleSubmit, formState: { errors } } = useForm<RegistrationFormValues>({
@@ -27,13 +30,6 @@ export const useRegistration = () => {
     },
   });
 
-  const validateAge = (value: any) => {
-    const currentDate = new Date();
-    const selectedDate = new Date(value);
-    const ageDiff = currentDate.getFullYear() - selectedDate.getFullYear();
-
-    return ageDiff >= 14 || 'Вы должны быть старше 14 лет';
-  };
 
   const onSubmitFetch = (data: { firstName: string, lastName: string, email: string, password: string, passwordConfirm: string }) => {
     dispatch(authRegistration({
@@ -50,13 +46,15 @@ export const useRegistration = () => {
     handleSubmit(onSubmitFetch)();
   }, []);
 
-
+  const isLoading = useSelector(selectLoader);
+  
   return {
     onNavigationPress,
     control,
     handleSubmit,
     errors,
     onSubmit,
-    validateAge,
+    isLoading,
+    isAuth,
   };
 };

@@ -23,7 +23,13 @@ const initialState: UserTypes = {
 const user = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    clearUser: (state) => {
+      state.user = null;
+      state.tokens.accessToken = '';
+      state.tokens.refreshToken = '';
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(authLogin.pending, (state) => {
@@ -58,4 +64,5 @@ const user = createSlice({
   },
 });
 
+export const { clearUser } = user.actions;
 export default user.reducer;

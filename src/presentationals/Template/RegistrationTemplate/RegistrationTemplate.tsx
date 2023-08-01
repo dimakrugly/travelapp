@@ -11,8 +11,7 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
   control,
   errors,
   onSubmit,
-  // isLoading,
-  validateAge,
+  isLoading,
 }) => {
   return (
       <View style={styles.textArea}>
@@ -153,19 +152,21 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
                   },
                 }}
             />
-            <View>
+            <View  style={styles.inputField}>
                 <AppButton
                     title='Register'
                     onPress={onSubmit}
-                    isLoading={false}
-                    disabled={false}
+                    isLoading={isLoading}
+                    disabled={isLoading}
                 />
             </View>
         </View>
+    <View  style={styles.inputField}>
+        <TouchableOpacity onPress={onNavigationPress}>
+        <Text>Have an account? Log in</Text>
+        </TouchableOpacity>
+    </View>
 
-          <TouchableOpacity onPress={onNavigationPress}>
-              <Text>Have an account? Log in</Text>
-          </TouchableOpacity>
 
         </View>
       </View>

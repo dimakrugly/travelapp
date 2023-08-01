@@ -3,7 +3,6 @@ import { RegistrationTemplate } from '../../presentationals/Template/Registratio
 import { useRegistration } from './hooks/useRegistration';
 
 export const RegistrationScreen: React.FC = () => {
-
   const useRegistrationProps = useRegistration();
   
   return (
