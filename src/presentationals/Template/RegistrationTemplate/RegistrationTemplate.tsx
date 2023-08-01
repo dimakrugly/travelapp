@@ -15,7 +15,6 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
 }) => {
   return (
       <View style={styles.textArea}>
-        <Text>Register</Text>
         <View style={styles.inputWrapper}>
             <View style={styles.inputField}>
                 <Controller

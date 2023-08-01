@@ -14,7 +14,7 @@ export const ProfileScreen: React.FC = () => {
 
   return (
       <View>
-        <Text>ПИШОВ НА ХУЙ РАЗОМ СО СВОЙИМ ТЕЛЕКАНАЛОМ</Text>
+        <Text>ProfilePage</Text>
         <AppButton onPress={logOut} title="LOGOUT" />
      </View>
   );

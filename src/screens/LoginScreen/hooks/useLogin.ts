@@ -7,8 +7,6 @@ import { AppDispatch } from '../../../store/store';
 import { selectLoader } from '../../../store/reducers/user/selector';
 import { FormValues } from '../../../presentationals/Template/LoginTemplate/types';
 
-
-
 export const useLogin = () => {
 
   const dispatch  = useDispatch<AppDispatch>();

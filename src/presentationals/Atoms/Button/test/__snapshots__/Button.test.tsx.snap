@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginTemplate should render correctly 1`] = `
-<View>
+exports[`AppButton Match snapshot 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
   <View
     accessibilityState={
       {
@@ -32,12 +39,24 @@ exports[`LoginTemplate should render correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       {
+        "alignItems": "center",
+        "backgroundColor": "black",
+        "borderRadius": 15,
+        "height": 48,
+        "justifyContent": "center",
         "opacity": 1,
+        "width": "100%",
       }
     }
   >
-    <Text>
-      Navigation to registration
+    <Text
+      style={
+        {
+          "color": "white",
+        }
+      }
+    >
+      title
     </Text>
   </View>
 </View>
