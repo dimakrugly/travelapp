@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## OZDT Travel APP
 
 ###
@@ -32,7 +31,16 @@ Login Screen with React Hook Form validation and POST queries to server
 
 
 =======
->>>>>>> 092cb09087c8e4e702b9c403ade4d29e0da7564d
+
+
+
+Added Map Screen and a feature to the Map screen that allows for the addition of pins to the map.
+
+
+![Login Screen](./MD/Map.png)
+
+
+=======
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
