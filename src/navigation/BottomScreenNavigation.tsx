@@ -13,21 +13,24 @@ export const BottomScreenNavigator: React.FC = () => {
                 name="Profile"
                 component={ProfileScreen}
                 options={{
-                  tabBarIcon: () => <Image style={{ width: 25, height: 25 }} source={require('../assets/images/profile.png')} />,
+                  headerShown: false,
+                  tabBarIcon: () => <Image style={{ width: 25, height: 25 }} source={require('../assets/images/NAV_PROFILE.png')} />,
                 }}
             />
             <Tab.Screen
                 name="Map"
                 component={MapScreen}
                 options={{
-                  tabBarIcon: () => <Image style={{ width: 25, height: 25 }} source={require('../assets/images/map.png')} />,
+                  headerShown: false,
+                  tabBarIcon: () => <Image style={{ width: 25, height: 25 }} source={require('../assets/images/NAV_MAP.png')}
+                  />,
                 }}
             />
             <Tab.Screen
                 name="Options"
                 component={OptionsScreen}
                 options={{
-                  tabBarIcon: () => <Image style={{ width: 25, height: 25 }} source={require('../assets/images/gear].png')} />,
+                  tabBarIcon: () => <Image style={{ width: 25, height: 25 }} source={require('../assets/images/NAV_GEAR.png')} />,
                 }}
             />
         </Tab.Navigator>

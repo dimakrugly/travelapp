@@ -19,8 +19,8 @@ export const RootNavigation = () => {
       <Stack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
           { !isAuth ?
               <>
-              <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
-              <Stack.Screen name={'RegistrationScreen'} component={RegistrationScreen} />
+              <Stack.Screen name={'LoginScreen'} component={LoginScreen} options={{ headerShown: false }}/>
+              <Stack.Screen name={'RegistrationScreen'} component={RegistrationScreen} options={{ headerShown: false }} />
               </>
             :
               <Stack.Screen name="AuthenticatedScreens" component={BottomScreenNavigator} options={{ headerShown: false }}/>

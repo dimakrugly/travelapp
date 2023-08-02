@@ -4,6 +4,7 @@ import { LoginTemplateStyles } from './types';
 export const styles  = StyleSheet.create<LoginTemplateStyles>({
   keyBoardContainer: {
     flex: 1,
+    backgroundColor: 'white',
   },
   loginImage: {
     width: 'auto',

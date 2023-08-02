@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { MapTemplate } from '../../presentationals/Template/MapTemplate/LoginTemplate';
 
 export const MapScreen: React.FC = () => {
   return (
-   <View><Text>ТУТ БУДУТ МАПЫ</Text></View>
+   <MapTemplate />
   );
 };
 

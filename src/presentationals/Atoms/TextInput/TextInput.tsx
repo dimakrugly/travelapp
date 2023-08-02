@@ -13,6 +13,7 @@ export const Input: React.FC<InputProps> = ({ placeholder, onChange, onBlur, val
       onBlur={onBlur}
       value={value}
       secureTextEntry={password}
-      />
+      placeholderTextColor="gray"
+    />
   );
 };

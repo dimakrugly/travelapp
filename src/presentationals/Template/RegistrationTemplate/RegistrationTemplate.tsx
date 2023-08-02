@@ -23,6 +23,7 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(({
                         <View>
                             <Input
                                 placeholder="First Name"
+
                                 onChange={(v) => onChange(v)}
                                 onBlur={onBlur}
                                 value={value}
