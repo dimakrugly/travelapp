@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../store/store';
 import { addPin, clearPins } from '../../../store/reducers/pins/pinsReducer';
 import { selectPins } from '../../../store/reducers/pins/selector';
-import { useState, useId } from 'react';
+import { useState } from 'react';
 
 export const useMap = () => {
   const dispatch = useDispatch<AppDispatch>();

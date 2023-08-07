@@ -48,6 +48,7 @@ export const MapTemplate = memo<MapTemplateProps>(({ onPinAdd, pins, enableAdd, 
                           onPress={onPinsRemove}>
             <Text style={styles.text}>-</Text>
         </TouchableOpacity>
+
     </View>
   );
 },
