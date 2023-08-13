@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { LoginTemplateStyles } from './types';
+import {StyleSheet} from 'react-native';
+import {LoginTemplateStyles} from './types';
 
-export const styles  = StyleSheet.create<LoginTemplateStyles>({
+export const styles = StyleSheet.create<LoginTemplateStyles>({
   keyBoardContainer: {
     flex: 1,
     backgroundColor: 'white',

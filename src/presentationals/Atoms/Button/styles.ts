@@ -1,9 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { ButtonStyles } from './types';
+import {StyleSheet} from 'react-native';
+import {ButtonStyles} from './types';
 
-
-
-export const styles  = StyleSheet.create<ButtonStyles>({
+export const styles = StyleSheet.create<ButtonStyles>({
   container: {
     justifyContent: 'center',
     alignItems: 'center',

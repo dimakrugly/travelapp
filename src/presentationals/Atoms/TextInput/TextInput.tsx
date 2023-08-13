@@ -1,10 +1,15 @@
-import { TextInput } from 'react-native';
+import {TextInput} from 'react-native';
 import React from 'react';
-import { styles } from './styles';
-import { InputProps } from './types';
+import {styles} from './styles';
+import {InputProps} from './types';
 
-
-export const Input: React.FC<InputProps> = ({ placeholder, onChange, onBlur, value, password = false }) => {
+export const Input: React.FC<InputProps> = ({
+  placeholder,
+  onChange,
+  onBlur,
+  value,
+  password = false,
+}) => {
   return (
     <TextInput
       style={styles.input}
