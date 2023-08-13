@@ -4,7 +4,7 @@ import {styles} from './styles';
 import {Input} from '../../Atoms/TextInput';
 import {RegisterTemplateProps} from './types';
 import {Controller} from 'react-hook-form';
-import {AppButton} from '../../Atoms/Button';
+import {Button} from '../../Atoms/Button';
 
 export const RegistrationTemplate = memo<RegisterTemplateProps>(
   ({onNavigationPress, control, errors, onSubmit, isLoading}) => {
@@ -148,7 +148,7 @@ export const RegistrationTemplate = memo<RegisterTemplateProps>(
               }}
             />
             <View style={styles.inputField}>
-              <AppButton
+              <Button
                 title="Register"
                 onPress={onSubmit}
                 isLoading={isLoading}

@@ -1,9 +1,9 @@
 import {render} from '@testing-library/react-native';
-import {AppButton} from '../Button';
+import {Button} from '../Button';
 
-describe('AppButton', () => {
+describe('Button', () => {
   it('Match snapshot', () => {
-    const tree = render(<AppButton title={'title'} onPress={() => {}} />);
+    const tree = render(<Button title={'title'} onPress={() => {}} />);
     expect(tree).toMatchSnapshot();
   });
 });

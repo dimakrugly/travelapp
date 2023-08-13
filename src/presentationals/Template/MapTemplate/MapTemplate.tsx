@@ -5,8 +5,9 @@ import {MapTemplateProps} from './types';
 import {Text} from 'react-native';
 import {styles} from './styles';
 import {BottomSheet} from '../../Organisms/BottomSheet/BottomSheet';
-import {MarkCard} from '../../Organisms/MarkCard/MarkCard';
 import {MarkerComponent} from '../../Atoms/MarkerComponent/MarkerComponent';
+import {TextArea} from '../../Atoms/TextArea/TextArea';
+import {Button} from '../../Atoms/Button';
 
 export const MapTemplate = memo<MapTemplateProps>(
   ({
@@ -18,6 +19,11 @@ export const MapTemplate = memo<MapTemplateProps>(
     bottomSheetRef,
     openBottomSheet,
     onSetCurrent,
+    name,
+    description,
+    onChangeName,
+    onChangeDescription,
+    onSavePinChanges,
   }) => {
     return (
       <View>
@@ -76,7 +82,9 @@ export const MapTemplate = memo<MapTemplateProps>(
         </TouchableOpacity>
 
         <BottomSheet bottomSheetRef={bottomSheetRef}>
-          <Text>Приветики-пистолетики</Text>
+          <TextArea onChange={onChangeName} text={name} />
+          <TextArea onChange={onChangeDescription} text={description} />
+          <Button title="Save" onPress={onSavePinChanges} />
         </BottomSheet>
       </View>
     );

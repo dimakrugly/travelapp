@@ -8,6 +8,7 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
 }) => {
   return (
     <BotSheet
+      style={{alignItems: 'center'}}
       ref={bottomSheetRef}
       snapPoints={['1%', '90%']}
       enablePanDownToClose={true}>

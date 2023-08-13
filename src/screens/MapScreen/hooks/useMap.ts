@@ -3,7 +3,7 @@ import {AppDispatch} from '../../../store/store';
 import {
   addPin,
   clearPins,
-  setCurrent,
+  setActivePin,
 } from '../../../store/reducers/pins/pinsReducer';
 import {selectPins} from '../../../store/reducers/pins/selector';
 import {useCallback, useState} from 'react';
@@ -50,7 +50,7 @@ export const useMap = () => {
 
   const onSetCurrent = useCallback(
     (pinId: string) => {
-      dispatch(setCurrent({id: pinId}));
+      dispatch(setActivePin({id: pinId}));
     },
     [dispatch],
   );

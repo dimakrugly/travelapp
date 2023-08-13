@@ -1,22 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-
-interface PinsTypes {
-  pins: Pin[];
-  current: undefined | Pin;
-}
-
-interface Pin {
-  id: string;
-  latitude: number;
-  longitude: number;
-  img?: string;
-  name?: string;
-  description?: string;
-}
+import {PinsTypes, Pin} from '../../../types/store/pins';
 
 const initialState: PinsTypes = {
   pins: [],
-  current: undefined,
+  activePin: undefined,
 };
 
 const pins = createSlice({
@@ -26,12 +13,16 @@ const pins = createSlice({
     addPin: (state, action: PayloadAction<Pin>) => {
       state.pins.push(action.payload);
     },
-    updatePinName: (
+    updatePins: (state, action) => {
+      state.pins = action.payload;
+    },
+    updatePinsName: (
       state,
       action: PayloadAction<{id: string; name: string}>,
     ) => {
       const {id, name} = action.payload;
-      const pinToUpdate = state.pins.find(pin => pin.id === id);
+      const {pins} = state;
+      const pinToUpdate = pins.find(pin => pin.id === id);
       if (pinToUpdate) {
         pinToUpdate.name = name;
       }
@@ -46,9 +37,9 @@ const pins = createSlice({
         pinToUpdate.description = description;
       }
     },
-    setCurrent: (state, action: PayloadAction<{id: string}>) => {
+    setActivePin: (state, action: PayloadAction<{id: string}>) => {
       const {id} = action.payload;
-      state.current = state.pins.find(pin => pin.id === id);
+      state.activePin = state.pins.find(pin => pin.id === id);
     },
     clearPins: state => {
       state.pins = [];
@@ -58,9 +49,10 @@ const pins = createSlice({
 
 export const {
   addPin,
+  updatePins,
   updatePinName,
   updatePinDescription,
-  setCurrent,
+  setActivePin,
   clearPins,
 } = pins.actions;
 

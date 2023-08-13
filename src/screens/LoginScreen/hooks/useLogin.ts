@@ -9,7 +9,6 @@ import {FormValues} from '../../../presentationals/Template/LoginTemplate/types'
 
 export const useLogin = () => {
   const dispatch = useDispatch<AppDispatch>();
-
   const navigation = useNavigation<any>();
   const onNavigationPress = useCallback(() => {
     navigation.navigate('RegistrationScreen');

@@ -3,7 +3,7 @@ import React from 'react';
 import {ButtonProps} from './types';
 import {styles} from './styles';
 
-export const AppButton: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   title,
   onPress,
   isLoading,

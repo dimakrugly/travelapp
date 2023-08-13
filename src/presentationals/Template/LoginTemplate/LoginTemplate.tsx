@@ -9,7 +9,7 @@ import {
 import {LoginTemplateProps} from './types';
 import {styles} from './styles';
 import {Input} from '../../Atoms/TextInput';
-import {AppButton} from '../../Atoms/Button';
+import {Button} from '../../Atoms/Button';
 import {Controller} from 'react-hook-form';
 
 export const LoginTemplate = memo<LoginTemplateProps>(
@@ -77,7 +77,7 @@ export const LoginTemplate = memo<LoginTemplateProps>(
                 )}
               </View>
               <View style={styles.buttonContainer}>
-                <AppButton
+                <Button
                   title="Login"
                   onPress={onSubmit}
                   isLoading={isLoading}

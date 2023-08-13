@@ -4,7 +4,7 @@ import {RootState} from '../../store';
 export const selectPinsData = (state: RootState) => state.pins;
 
 export const selectPins = createSelector(selectPinsData, ({pins}) => pins);
-export const selectCurrentPin = createSelector(
+export const selectActivePin = createSelector(
   selectPinsData,
-  ({current}) => current,
+  ({activePin}) => activePin,
 );
