@@ -1,7 +1,13 @@
-import { Action, combineReducers, configureStore, getDefaultMiddleware, ThunkAction } from '@reduxjs/toolkit';
+import {
+  Action,
+  combineReducers,
+  configureStore,
+  getDefaultMiddleware,
+  ThunkAction,
+} from '@reduxjs/toolkit';
 import userReducer from './reducers/user/userReducer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { persistStore, persistReducer } from 'redux-persist';
+import {persistStore, persistReducer} from 'redux-persist';
 import pinsReducer from './reducers/pins/pinsReducer';
 
 const rootReducer = combineReducers({
@@ -25,12 +31,11 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
-ReturnType,
-RootState,
-unknown,
-Action<string>
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
 >;

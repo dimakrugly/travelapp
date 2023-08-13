@@ -13,7 +13,7 @@ export const useLogin = () => {
   const navigation = useNavigation<any>();
   const onNavigationPress = useCallback(() => {
     navigation.navigate('RegistrationScreen');
-  }, []);
+  }, [navigation]);
 
   const {
     control,

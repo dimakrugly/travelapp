@@ -36,28 +36,31 @@ export const useRegistration = () => {
     },
   });
 
-  const onSubmitFetch = (data: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-    passwordConfirm: string;
-  }) => {
-    dispatch(
-      authRegistration({
-        firstName: data.firstName,
-        lastName: data.lastName,
-        age: 32,
-        email: data.email,
-        password: data.password,
-        passwordConfirm: data.passwordConfirm,
-      }),
-    );
-  };
+  const onSubmitFetch = useCallback(
+    (data: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      password: string;
+      passwordConfirm: string;
+    }) => {
+      dispatch(
+        authRegistration({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          age: 32,
+          email: data.email,
+          password: data.password,
+          passwordConfirm: data.passwordConfirm,
+        }),
+      );
+    },
+    [dispatch],
+  );
 
   const onSubmit = useCallback(() => {
     handleSubmit(onSubmitFetch)();
-  }, []);
+  }, [handleSubmit, onSubmitFetch]);
 
   const isLoading = useSelector(selectLoader);
 

@@ -1,21 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { authLogin } from './actions/authLogin';
-import { authRegistration } from './actions/authRegistration';
+import {createSlice} from '@reduxjs/toolkit';
+import {authLogin} from './actions/authLogin';
+import {authRegistration} from './actions/authRegistration';
 
 interface UserTypes {
-  user: null | {}
+  user: null | {};
   tokens: {
     accessToken: string;
     refreshToken: string;
-  }
-  isLoading: boolean
-  failure: null | any
+  };
+  isLoading: boolean;
+  failure: null | any;
 }
 
 const initialState: UserTypes = {
   user: null,
-  tokens: { accessToken: '',
-    refreshToken:'' },
+  tokens: {accessToken: '', refreshToken: ''},
   isLoading: false,
   failure: null,
 };
@@ -24,15 +23,15 @@ const user = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    clearUser: (state) => {
+    clearUser: state => {
       state.user = null;
       state.tokens.accessToken = '';
       state.tokens.refreshToken = '';
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
-      .addCase(authLogin.pending, (state) => {
+      .addCase(authLogin.pending, state => {
         state.isLoading = true;
         state.failure = null;
       })
@@ -43,11 +42,11 @@ const user = createSlice({
         state.tokens.accessToken = action.payload.accessToken;
         state.tokens.refreshToken = action.payload.refreshToken;
       })
-      .addCase(authLogin.rejected, (state) => {
+      .addCase(authLogin.rejected, state => {
         state.isLoading = false;
       })
-        
-      .addCase(authRegistration.pending, (state) => {
+
+      .addCase(authRegistration.pending, state => {
         state.isLoading = true;
         state.failure = null;
       })
@@ -58,11 +57,11 @@ const user = createSlice({
         state.tokens.accessToken = action.payload.accessToken;
         state.tokens.refreshToken = action.payload.refreshToken;
       })
-      .addCase(authRegistration.rejected, (state) => {
+      .addCase(authRegistration.rejected, state => {
         state.isLoading = false;
       });
   },
 });
 
-export const { clearUser } = user.actions;
+export const {clearUser} = user.actions;
 export default user.reducer;

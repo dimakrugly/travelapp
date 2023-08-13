@@ -76,7 +76,7 @@ export const MapTemplate = memo<MapTemplateProps>(
         </TouchableOpacity>
 
         <BottomSheet bottomSheetRef={bottomSheetRef}>
-          <MarkCard />
+          <Text>Приветики-пистолетики</Text>
         </BottomSheet>
       </View>
     );
